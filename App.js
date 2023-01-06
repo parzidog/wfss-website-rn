@@ -23,7 +23,7 @@ const App = () => (
           <Text style={styles.link}>Location</Text>
         </Link>
         <Link to="/size">
-          <Text style={styles.link}>SizeGuide</Text>
+          <Text style={styles.link}>Size Guide</Text>
         </Link>
         <Link to="/faq">
           <Text style={styles.link}>FAQ</Text>
