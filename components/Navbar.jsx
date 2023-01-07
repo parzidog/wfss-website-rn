@@ -26,7 +26,7 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav id='navbar'>
+    <nav id='navbar' style={{ display: "flex", alignItems: "center" }}>
       <Link to={"/"}>
         <img src={logo} alt="logo" />
       </Link>
