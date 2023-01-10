@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import { Router, Route, Link } from "./react-router";
 import Home from "./components/Home";
 import Pricing from "./components/Pricing";
@@ -11,7 +11,7 @@ import AdminDashboard from "./components/AdminDashboard";
 
 const App = () => (
   <Router>
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.nav}>
         <Link style={styles.link} to="/">
           <Image style={{ width: "160pt", height: "53pt", marginLeft: "10pt" }} source={require("./assets/logo.png")} />
@@ -56,7 +56,7 @@ const App = () => (
       {/* <Route path="/contact" component={Contact} /> */}
       <Route path="/admin" component={Admin} />
       <Route path="/admin/dashboard" component={AdminDashboard} />
-    </View>
+    </ScrollView>
   </Router>
 );
 
