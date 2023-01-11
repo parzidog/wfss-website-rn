@@ -14,20 +14,20 @@ const Home = () => {
         </View>
       </View>
       <View id="banner" style={styles.banner}>
-        <Text>No Deposit, No Admin Fees</Text>
+        <Text style={{ color: "#dadada", fontSize: "2.5em", fontWeight: "bolder" }}>No Deposit, No Admin Fees</Text>
       </View>
-      <View id='unit-overview' style={styles.overview}>
-        <View className="unit-price">
-          <Text className="price">$39 & up</Text>
-          <Text className="size">SMALL UNITS</Text>
+      <View id='unit-overview' style={styles.unitOverview}>
+        <View className="unit-price" style={styles.unitPrice}>
+          <Text className="price" style={styles.facilityh3}>$39 & up</Text>
+          <Text className="size" style={styles.facilityh3}>SMALL UNITS</Text>
         </View>
-        <View className="unit-price">
-          <Text className="price">$84 & up</Text>
-          <Text className="size">MEDIUM UNITS</Text>
+        <View className="unit-price" style={styles.unitPrice}>
+          <Text className="price" style={styles.facilityh3}>$84 & up</Text>
+          <Text className="size" style={styles.facilityh3}>MEDIUM UNITS</Text>
         </View>
-        <View className="unit-price">
-          <Text className="price">$124 & up</Text>
-          <Text className="size">LARGE UNITS</Text>
+        <View className="unit-price" style={styles.unitPrice}>
+          <Text className="price" style={styles.facilityh3}>$124 & up</Text>
+          <Text className="size" style={styles.facilityh3}>LARGE UNITS</Text>
         </View>
       </View>
     </View>
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    fontSize: '2.5rem',
+    fontSize: '2.5em',
     fontWeight: '600',
     margin: 'auto',
   },
@@ -87,8 +87,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    fontSize: '1.5rem',
-    fontWeight: '400',
+    fontSize: '1.5em',
+    fontWeight: '500',
   },
   banner: {
     width: '80%',
@@ -107,10 +107,25 @@ const styles = StyleSheet.create({
   },
   unitOverview: {
     display: 'flex',
-    flexWrap: 'wrap',
+    flexWrap: 'nowrap',
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column',
+    flexDirection: 'row',
+    width: '100vw',
+  },
+  unitPrice: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: "#101075",
+    color: '#dedede',
+    borderColor: '#950000',
+    borderWidth: '5pt',
+    borderStyle: 'solid',
+    borderRadius: '10pt',
+    margin: "2%",
+    width: '20%',
+    height: '15vh',
   },
 })
 

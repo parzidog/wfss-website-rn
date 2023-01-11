@@ -19,7 +19,8 @@ const App = () => (
         <View style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-around",
+          justifyContent: "right",
+          margin: "2%",
           alignItems: "center",
           width: "75%",
           height: "100pt",
@@ -39,12 +40,12 @@ const App = () => (
           {/* <Link style={styles.link} to="/contact">
           <Text style={styles.link}>Contact</Text>
         </Link> */}
-          <Link style={styles.link} to="/admin">
+          {/* <Link style={styles.link} to="/admin">
             <Text style={styles.link}>Admin</Text>
           </Link>
           <Link style={styles.link} to="/admin/dashboard">
             <Text style={styles.link}>AdminDashboard</Text>
-          </Link>
+          </Link> */}
         </View>
       </View>
 
@@ -67,10 +68,10 @@ const styles = StyleSheet.create({
   nav: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     width: "100%",
-    height: "100pt",
+    height: "75pt",
     backgroundColor: "#a5a5a5",
     borderBottomColor: "#101075",
     borderBottomWidth: "5pt",
@@ -78,6 +79,7 @@ const styles = StyleSheet.create({
   },
   link: {
     display: "flex",
+    flexWrap: "no-wrap",
     color: "#fff",
     textDecorationLine: "none",
     fontSize: "1.25rem",
@@ -85,6 +87,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: "auto",
     marginBottom: "auto",
+    margin: "2%",
+    padding: "2%",
+    width: "5%",
   }
 });
 
