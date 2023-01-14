@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { View, StyleSheet, Text } from "react-native"
 import { Link } from "react-router-dom"
 import logo from "../assets/logo.png"
 
@@ -14,8 +15,7 @@ const Navbar = () => {
     if (isMobile) {
       let navButtons = document.getElementsByClassName("nav-buttons");
       for (let i = 0; i < navButtons.length; i++) {
-        navButtons[i].style.fontSize = "small";
-        navButtons[i].style.padding = "0%";
+        navButtons[i].style = { padding: 0, fontSize: "small" };
       }
     }
   }
@@ -26,31 +26,31 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav id='navbar' style={{ display: "flex", alignItems: "center" }}>
+    <nav id='navbar' style={{ display: "flex", alignItems: "center", width: "100%" }}>
       <Link to={"/"}>
         <img src={logo} alt="logo" />
       </Link>
-      <div id='nav-buttons'>
+      <View id='nav-buttons'>
         <Link to={"pricing"}>
-          <h2 className="navbutton" >Pricing</h2>
+          <Text >Pricing</Text>
         </Link>
         <Link to={"location"}>
-          <h2 className="navbutton" >Location</h2>
+          <Text >Location</Text>
         </Link>
         <Link to={"size"}>
-          <h2 className="navbutton" >Size Guide</h2>
+          <Text >Size Guide</Text>
         </Link>
         <Link to={"faq"}>
-          <h2 className="navbutton" >
+          <Text >
             FAQ
-          </h2>
+          </Text>
         </Link>
         <Link to={"contact"}>
-          <h2 className="navbutton" >
+          <Text >
             Contact Us
-          </h2>
+          </Text>
         </Link>
-      </div>
+      </View>
     </nav>
   )
 }

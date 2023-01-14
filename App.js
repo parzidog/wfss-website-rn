@@ -14,7 +14,7 @@ const App = () => (
     <ScrollView style={styles.container}>
       <View style={styles.nav}>
         <Link style={styles.link} to="/">
-          <Image style={{ width: "160pt", height: "53pt", marginLeft: "10pt" }} source={require("./assets/logo.png")} />
+          <Image style={{ width: 160, height: 53, marginLeft: 10 }} source={require("./assets/logo.png")} />
         </Link>
         <View style={{
           display: "flex",
@@ -23,7 +23,7 @@ const App = () => (
           margin: "2%",
           alignItems: "center",
           width: "75%",
-          height: "100pt",
+          height: 100,
         }}>
           <Link style={styles.link} to="/pricing">
             <Text style={styles.link}>Pricing</Text>
@@ -64,6 +64,7 @@ const App = () => (
 const styles = StyleSheet.create({
   container: {
     marginTop: 0,
+    backgroundColor: "#ddd",
   },
   nav: {
     display: "flex",
@@ -71,10 +72,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     width: "100%",
-    height: "75pt",
+    height: 75,
     backgroundColor: "#a5a5a5",
     borderBottomColor: "#101075",
-    borderBottomWidth: "5pt",
+    borderBottomWidth: 5,
     boxShadow: "0 0 10pt 0 rgba(0, 0, 0, 0.5)",
   },
   link: {
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     flexWrap: "no-wrap",
     color: "#fff",
     textDecorationLine: "none",
-    fontSize: "1.25rem",
+    fontSize: 18,
     fontWeight: "bold",
     alignItems: "center",
     marginTop: "auto",
