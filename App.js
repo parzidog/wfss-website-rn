@@ -14,15 +14,15 @@ const App = () => (
     <ScrollView style={styles.container}>
       <View style={styles.nav}>
         <Link style={styles.link} to="/">
-          <Image style={{ width: 160, height: 53, marginLeft: 10 }} source={require("./assets/logo.png")} />
+          <Image style={{ width: 124, height: 40, marginLeft: "0%", marginTop: "0%" }} source={require("./assets/logo.png")} />
         </Link>
         <View style={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "right",
-          margin: "2%",
+          margin: "1%",
           alignItems: "center",
-          width: "75%",
+          width: "60%",
           height: 100,
         }}>
           <Link style={styles.link} to="/pricing">
@@ -63,7 +63,7 @@ const App = () => (
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 0,
+    marginTop: "0%",
     backgroundColor: "#ddd",
   },
   nav: {
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     width: "100%",
-    height: 75,
+    height: 125,
     backgroundColor: "#a5a5a5",
     borderBottomColor: "#101075",
     borderBottomWidth: 5,
@@ -83,14 +83,12 @@ const styles = StyleSheet.create({
     flexWrap: "no-wrap",
     color: "#fff",
     textDecorationLine: "none",
-    fontSize: 18,
+    fontSize: 13,
     fontWeight: "bold",
     alignItems: "center",
-    marginTop: "auto",
-    marginBottom: "auto",
-    margin: "2%",
-    padding: "2%",
-    width: "5%",
+    marginTop: "4.5%",
+    padding: "1%",
+    width: "65px",
   }
 });
 

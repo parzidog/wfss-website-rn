@@ -13,7 +13,7 @@
     "@babel/core": "^7.19.3"
   },
   "scripts": {
-    "start": "expo start",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && expo start",
     "android": "export NODE_OPTIONS=--openssl-legacy-provider && expo start --android",
     "ios": "export NODE_OPTIONS=--openssl-legacy-provider && expo start --ios",
     "web": "export NODE_OPTIONS=--openssl-legacy-provider && expo start --web"

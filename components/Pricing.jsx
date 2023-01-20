@@ -1,7 +1,8 @@
 // import React, { useState, useEffect } from "react"
 // import { useDispatch } from "react-redux"
 // import { fetchUnits } from "../features/unitSlice";
-import units from "../assets/unitData";
+import units from "../assets/unitData.js";
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 const Pricing = () => {
   // const dispatch = useDispatch();
@@ -42,36 +43,78 @@ const Pricing = () => {
   // }, [units])
 
   return (
-    <div>
-      <div className="header">
-        <h1>
+    <ScrollView>
+      <View style={pricing.header} className="header" >
+        <Text style={{ color: "white", fontSize: 36, fontWeight: 'bold', padding: '3%' }}>
           Pricing
-        </h1>
-      </div>
-      <div id="pricing">
-        <div id="climate">
-          <h1>Climate Controlled</h1>
+        </Text>
+      </View>
+      <View id="pricing" style={pricing.pricing}>
+        <View id="climate">
+          <Text>Climate Controlled</Text>
           {climate.length > 0 ? climate.map(unit => {
             return (
-              <div key={unit.id} className="pricing-card climate" >
-                <h1>{unit.length} x {unit.width} Climate Controlled</h1>
-                <h2>${unit.price}</h2>
-              </div>
+              <View key={unit.id} style={pricing.climate} className="pricing-card climate" >
+                <Text>{unit.length} x {unit.width} Climate Controlled</Text>
+                <Text>${unit.price}</Text>
+              </View>
             )
-          }) : <h1>Loading...</h1>}
-        </div>
-        <div id="non-climate">
-          <h1>Non-Climate Controlled</h1>
+          }) : <Text>Loading...</Text>}
+        </View>
+        <View id="non-climate">
+          <Text>Non-Climate Controlled</Text>
           {nonClimate.length > 0 ? nonClimate.map(unit =>
-            <div key={unit.id} className="pricing-card nonclimate" >
-              <h1>{unit.length} x {unit.width} Non-Climate Controlled</h1>
-              <h2>${unit.price}</h2>
-            </div>
-          ) : <h1>Loading...</h1>}
-        </div>
-      </div >
-    </div>
+            <View key={unit.id} style={pricing.nonclimate} className="pricing-card nonclimate" >
+              <Text>{unit.length} x {unit.width} Non-Climate Controlled</Text>
+              <Text>${unit.price}</Text>
+            </View>
+          ) : <Text>Loading...</Text>}
+        </View>
+      </View >
+    </ScrollView>
   )
 }
+
+const pricing = StyleSheet.create({
+  header: {
+    backgroundColor: 'red',
+    height: 100,
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  pricing: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  climate: {
+    backgroundColor: 'blue',
+    height: '100%',
+    width: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    borderColor: 'red',
+    borderRadius: 10,
+    borderWidth: 3,
+    alignItems: 'center'
+  },
+  nonclimate: {
+    backgroundColor: 'red',
+    height: '100%',
+    width: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: 'blue',
+    borderRadius: 10,
+    borderWidth: 3
+  },
+})
 
 export default Pricing
