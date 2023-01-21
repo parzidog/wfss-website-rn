@@ -15,21 +15,21 @@ const Home = () => {
           </View>
         </ImageBackground>
       </View>
-      <View id="banner" style={styles.banner}>
-        <Text style={{ color: "#dadada", fontSize: 36, fontWeight: "bold", textAlign: "center" }}>No Deposit, No Admin Fees</Text>
+      <View style={styles.banner}>
+        <Text style={{ color: "#dadada", fontSize: 36, fontWeight: "bold", textAlign: "center", padding: 30 }}>No Deposit, No Admin Fees</Text>
       </View>
-      <View id='unit-overview' style={styles.unitOverview}>
-        <View className="unit-price" style={styles.unitPrice}>
-          <Text className="price" style={styles.facilityh3}>$39 & up</Text>
-          <Text className="size" style={styles.facilityh3}>SMALL UNITS</Text>
+      <View style={styles.unitOverview}>
+        <View style={styles.unitPrice}>
+          <Text style={styles.facilityh3}>$39 & up</Text>
+          <Text style={styles.facilityh3}>SMALL UNITS</Text>
         </View>
-        <View className="unit-price" style={styles.unitPrice}>
-          <Text className="price" style={styles.facilityh3}>$84 & up</Text>
-          <Text className="size" style={styles.facilityh3}>MEDIUM UNITS</Text>
+        <View style={styles.unitPrice}>
+          <Text style={styles.facilityh3}>$84 & up</Text>
+          <Text style={styles.facilityh3}>MEDIUM UNITS</Text>
         </View>
-        <View className="unit-price" style={styles.unitPrice}>
-          <Text className="price" style={styles.facilityh3}>$124 & up</Text>
-          <Text className="size" style={styles.facilityh3}>LARGE UNITS</Text>
+        <View style={styles.unitPrice}>
+          <Text style={styles.facilityh3}>$124 & up</Text>
+          <Text style={styles.facilityh3}>LARGE UNITS</Text>
         </View>
       </View>
     </View>

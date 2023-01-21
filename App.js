@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
+import { ScrollView, StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import { Router, Route, Link } from "./react-router";
 import Home from "./components/Home";
 import Pricing from "./components/Pricing";
@@ -9,6 +9,15 @@ import FAQ from "./components/FAQ";
 import Admin from "./components/Admin";
 import AdminDashboard from "./components/AdminDashboard";
 
+const width = Dimensions.get("window").width;
+
+let navPadding;
+
+if (width > 800) {
+  navPadding = "0%";
+} else {
+  navPadding = "7.5%";
+}
 const App = () => (
   <Router>
     <ScrollView style={styles.container}>
@@ -19,23 +28,21 @@ const App = () => (
         <View style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "right",
+          justifyContent: "center",
           margin: "1%",
           alignItems: "center",
-          width: "60%",
-          height: 100,
         }}>
           <Link style={styles.link} to="/pricing">
-            <Text style={styles.link}>Pricing</Text>
+            <Text style={styles.text}>Pricing</Text>
           </Link>
           <Link style={styles.link} to="/location">
-            <Text style={styles.link}>Location</Text>
+            <Text style={styles.text}>Location</Text>
           </Link>
           <Link style={styles.link} to="/size">
-            <Text style={styles.link}>Size Guide</Text>
+            <Text style={styles.text}>Size Guide</Text>
           </Link>
           <Link style={styles.link} to="/faq">
-            <Text style={styles.link}>FAQ</Text>
+            <Text style={styles.text}>FAQ</Text>
           </Link>
           {/* <Link style={styles.link} to="/contact">
           <Text style={styles.link}>Contact</Text>
@@ -68,11 +75,12 @@ const styles = StyleSheet.create({
   },
   nav: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "space-around",
     alignItems: "center",
+    paddingTop: navPadding,
     width: "100%",
-    height: 125,
+    // height: 125,
     backgroundColor: "#a5a5a5",
     borderBottomColor: "#101075",
     borderBottomWidth: 5,
@@ -82,14 +90,28 @@ const styles = StyleSheet.create({
     display: "flex",
     flexWrap: "no-wrap",
     color: "#fff",
-    textDecorationLine: "none",
-    fontSize: 13,
-    fontWeight: "bold",
+    justifyContent: "center",
     alignItems: "center",
-    marginTop: "4.5%",
-    padding: "1%",
-    width: "65px",
-  }
+    marginTop: "1%",
+    margin: "1%",
+    minWidth: 100,
+    borderRadius: 10,
+    textDecorationLine: "none",
+  },
+  text: {
+    display: "flex",
+    flexWrap: "no-wrap",
+    color: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 18,
+    fontWeight: "bold",
+    padding: 5,
+    margin: "auto",
+    minWidth: 85,
+    backgroundColor: "#101075",
+    borderRadius: 7.5,
+  },
 });
 
 export default App;
