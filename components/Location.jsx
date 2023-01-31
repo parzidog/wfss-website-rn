@@ -1,26 +1,24 @@
 import React from "react"
 import Map from "./Map"
+import { View, Text } from "react-native"
+import STYLES from "../assets/Styles"
 
 const Location = () => {
   return (
     <>
-      <div className="header">
-        <h1>
+      <View style={STYLES.header}>
+        <Text style={STYLES.headerText}>
           Location
-        </h1>
-      </div>
-      <div id='location'>
-        <div id='map'>
-          <h1>{"We are located at "}
-            <span style={{ textDecoration: "underline" }}>
-              5432 Southwest Parkway
-            </span>
-            {" across the street from Memorial Stadium!"}</h1>
+        </Text>
+      </View>
+      <View id='location'>
+        <View id='map'>
+          <Text>We are located at 5432 Southwest Parkway across the street from Memorial Stadium!</Text>
           <Map />
-        </div>
-        <div id='directions'>
-          <div className='directions'>
-            <h1>Directions from MSU</h1>
+        </View>
+        <View id='directions'>
+          <View className='directions'>
+            <Text>Directions from MSU</Text>
             <ol>
               <li>
                 Head north toward Council Dr
@@ -47,9 +45,9 @@ const Location = () => {
                 Destination will be on the right
               </li>
             </ol>
-          </div>
-          <div className="directions">
-            <h1>Directions from Sheppard AFB</h1>
+          </View>
+          <View className="directions">
+            <Text>Directions from Sheppard AFB</Text>
             <ol>
               <li>Head southwest on Sheppard Access Rd toward Enterprise St</li>
               <li>Keep left to continue on TX-325 Spur S</li>
@@ -66,9 +64,9 @@ const Location = () => {
                 Destination will be on the right
               </li>
             </ol>
-          </div>
-        </div>
-      </div>
+          </View>
+        </View>
+      </View>
     </>
   )
 }

@@ -32,17 +32,17 @@ const Admin = () => {
   };
 
   return (
-    <div id="admin">
-      <div className="login">
-        <h1>Admin Login</h1>
+    <View id="admin">
+      <View className="login">
+        <Text>Admin Login</Text>
         <hr />
         <form onSubmit={handleSubmit} autoComplete="on">
-          <div className="box">
+          <View className="box">
             <label htmlFor="username" className="fl fontLabel">
               {" "}
               Username:{" "}
             </label>
-            <div className="fr">
+            <View className="fr">
               <input
                 type="text"
                 name="username"
@@ -52,16 +52,16 @@ const Admin = () => {
                 required
                 onChange={handleChange("username")}
               />
-            </div>
-            <div className="clr"></div>
-          </div>
+            </View>
+            <View className="clr"></View>
+          </View>
 
-          <div className="box">
+          <View className="box">
             <label htmlFor="password" className="fl fontLabel">
               {" "}
               Password:{" "}
             </label>
-            <div className="fr">
+            <View className="fr">
               <input
                 type="password"
                 required
@@ -70,21 +70,21 @@ const Admin = () => {
                 className="textBox"
                 onChange={handleChange("password")}
               />
-            </div>
-            <div className="clr"></div>
-          </div>
+            </View>
+            <View className="clr"></View>
+          </View>
 
-          <div className="box">
+          <View className="box">
             <input
               type="submit"
               name="login"
               className="submit"
               value="Login"
             />
-          </div>
+          </View>
         </form>
-      </div>
-    </div>
+      </View>
+    </View>
   )
 }
 

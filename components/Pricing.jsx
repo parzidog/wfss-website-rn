@@ -3,6 +3,7 @@
 // import { fetchUnits } from "../features/unitSlice";
 import units from "../assets/unitData.js";
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
+import STYLES from "../assets/Styles"
 
 const Pricing = () => {
   // const dispatch = useDispatch();
@@ -44,29 +45,29 @@ const Pricing = () => {
 
   return (
     <ScrollView>
-      <View style={pricing.header} className="header" >
-        <Text style={{ color: "white", fontSize: 36, fontWeight: 'bold', padding: '3%' }}>
+      <View style={STYLES.header} className="header" >
+        <Text style={STYLES.headerText}>
           Pricing
         </Text>
       </View>
-      <View id="pricing" style={pricing.pricing}>
+      <View id="pricing" style={STYLES.pricing}>
         <View id="climate">
-          <Text>Climate Controlled</Text>
+          <Text style={STYLES.climateSpecifications}>Climate Controlled</Text>
           {climate.length > 0 ? climate.map(unit => {
             return (
-              <View key={unit.id} style={pricing.climate} className="pricing-card climate" >
-                <Text>{unit.length} x {unit.width} Climate Controlled</Text>
-                <Text>${unit.price}</Text>
+              <View key={unit.id} style={STYLES.climate} className="pricing-card climate" >
+                <Text style={{ ...STYLES.facilityh3, textShadowColor: "#aa1010" }}>{unit.length} x {unit.width} Climate Controlled</Text>
+                <Text style={{ ...STYLES.facilityh1, textShadowColor: "#aa1010" }}>${unit.price}</Text>
               </View>
             )
           }) : <Text>Loading...</Text>}
         </View>
         <View id="non-climate">
-          <Text>Non-Climate Controlled</Text>
+          <Text style={STYLES.climateSpecifications}>Non-Climate Controlled</Text>
           {nonClimate.length > 0 ? nonClimate.map(unit =>
-            <View key={unit.id} style={pricing.nonclimate} className="pricing-card nonclimate" >
-              <Text>{unit.length} x {unit.width} Non-Climate Controlled</Text>
-              <Text>${unit.price}</Text>
+            <View key={unit.id} style={STYLES.nonclimate} className="pricing-card nonclimate" >
+              <Text style={{ ...STYLES.facilityh3, textShadowColor: "#1010aa" }}>{unit.length} x {unit.width} Non-Climate Controlled</Text>
+              <Text style={{ ...STYLES.facilityh1, textShadowColor: "#1010aa" }}>${unit.price}</Text>
             </View>
           ) : <Text>Loading...</Text>}
         </View>
@@ -74,47 +75,5 @@ const Pricing = () => {
     </ScrollView>
   )
 }
-
-const pricing = StyleSheet.create({
-  header: {
-    backgroundColor: 'red',
-    height: 100,
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
-  },
-  pricing: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  },
-  climate: {
-    backgroundColor: 'blue',
-    height: '100%',
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    borderColor: 'red',
-    borderRadius: 10,
-    borderWidth: 3,
-    alignItems: 'center'
-  },
-  nonclimate: {
-    backgroundColor: 'red',
-    height: '100%',
-    width: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: 'blue',
-    borderRadius: 10,
-    borderWidth: 3
-  },
-})
 
 export default Pricing

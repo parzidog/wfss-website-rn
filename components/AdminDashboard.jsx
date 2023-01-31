@@ -54,48 +54,48 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div id="admin-dashboard">
-      <div className="header">
-        <h1>
+    <View id="admin-dashboard">
+      <View className="header">
+        <Text>
           Update Prices
-        </h1>
-      </div>
-      <div className="content">
-        <div className="units">
+        </Text>
+      </View>
+      <View className="content">
+        <View className="units">
           <form onSubmit={handleSubmit}>
-            <div className="climate">
+            <View className="climate">
               {units.map((unit) =>
                 unit.climate ?
-                  <div className="unit climate" key={unit.id}>
-                    <h3>{unit.length} x {unit.width} {unit.climate ? <span> Climate Controlled </span> : <span> Outside </span>}</h3>
-                    <div className="unit-price">
+                  <View className="unit climate" key={unit.id}>
+                    <Text>{unit.length} x {unit.width} {unit.climate ? <span> Climate Controlled </span> : <span> Outside </span>}</Text>
+                    <View className="unit-price">
                       <h4>Price</h4>
                       <input type="number" name={unit.id} defaultValue={unit.price} onChange={handleChange(unit)} />
-                    </div>
-                  </div>
+                    </View>
+                  </View>
                   : <></>
               )}
-            </div>
-            <div className="non-climate">
+            </View>
+            <View className="non-climate">
               {units.map((unit) =>
                 !unit.climate ?
-                  <div className="unit non-climate" key={unit.id}>
-                    <h3>{unit.length} x {unit.width} {unit.climate ? <span> Climate Controlled </span> : <span> Outside </span>}</h3>
-                    <div className="unit-price">
+                  <View className="unit non-climate" key={unit.id}>
+                    <Text>{unit.length} x {unit.width} {unit.climate ? <span> Climate Controlled </span> : <span> Outside </span>}</Text>
+                    <View className="unit-price">
                       <h4>Price</h4>
                       <input type="number" name={unit.id} defaultValue={unit.price} onChange={handleChange(unit)} />
-                    </div>
-                  </div>
+                    </View>
+                  </View>
                   : <></>
               )}
-            </div>
-            <div id="submit">
+            </View>
+            <View id="submit">
               <input type="submit" value="Update Prices" />
-            </div>
+            </View>
           </form>
-        </div>
-      </div>
-    </div>
+        </View>
+      </View>
+    </View>
   )
 }
 
