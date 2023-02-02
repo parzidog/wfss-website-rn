@@ -13,6 +13,11 @@ const STYLES = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: lightGrey,
   },
+  navButton: {
+    borderRadius: 10,
+    height: 25,
+    width: 75,
+  },
   facility: {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -53,7 +58,7 @@ const STYLES = StyleSheet.create({
   facilityh3: {
     display: 'flex',
     padding: '2%',
-    paddingTop: '0',
+    paddingTop: 0,
     color: lightGrey,
     textShadowColor: blue,
     textShadowOffset: { width: 1.5, height: 1.5 },

@@ -8,6 +8,7 @@ import FAQ from "./components/FAQ";
 // import Contact from "./components/Contact";
 import Admin from "./components/Admin";
 import AdminDashboard from "./components/AdminDashboard";
+import Navbar from "./components/Navbar";
 
 const width = Dimensions.get("window").width;
 
@@ -21,6 +22,7 @@ if (width > 800) {
 const App = () => (
   <Router>
     <ScrollView style={styles.container}>
+      <Navbar />
       <View style={styles.nav}>
         <Link style={styles.link} to="/">
           <Image style={{ width: 124, height: 40, marginLeft: "0%", marginTop: "0%" }} source={require("./assets/logo.png")} />
@@ -44,9 +46,9 @@ const App = () => (
           <Link style={styles.link} to="/faq">
             <Text style={styles.text}>FAQ</Text>
           </Link>
-          {/* <Link style={styles.link} to="/contact">
-          <Text style={styles.link}>Contact</Text>
-        </Link> */}
+          <Link style={styles.link} to="/contact">
+            <Text style={styles.link}>Contact</Text>
+          </Link>
           {/* <Link style={styles.link} to="/admin">
             <Text style={styles.link}>Admin</Text>
           </Link>
@@ -56,7 +58,7 @@ const App = () => (
         </View>
       </View>
 
-      <Route exact path="/" component={Home} />
+      < Route exact path="/" component={Home} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/location" component={Location} />
       <Route path="/size" component={SizeGuide} />
@@ -64,8 +66,8 @@ const App = () => (
       {/* <Route path="/contact" component={Contact} /> */}
       <Route path="/admin" component={Admin} />
       <Route path="/admin/dashboard" component={AdminDashboard} />
-    </ScrollView>
-  </Router>
+    </ScrollView >
+  </Router >
 );
 
 const styles = StyleSheet.create({
