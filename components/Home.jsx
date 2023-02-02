@@ -4,8 +4,6 @@ import { View, Text, ImageBackground } from "react-native"
 import STYLES from "../assets/Styles"
 
 const Home = () => {
-  const [isMobile, setIsMobile] = React.useState(false)
-
   return (
     <View id='home' style={STYLES.home}>
       <View id='facility' style={STYLES.facility}>
