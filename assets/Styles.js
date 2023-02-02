@@ -17,6 +17,7 @@ const STYLES = StyleSheet.create({
     borderRadius: 10,
     height: 25,
     width: 75,
+    backgroundColor: red,
   },
   facility: {
     backgroundPosition: "center",
