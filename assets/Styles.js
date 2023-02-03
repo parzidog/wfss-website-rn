@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 
 const blue = "rgba(10, 10, 100, 1)";
 const red = "#950000";
@@ -242,13 +242,13 @@ const STYLES = StyleSheet.create({
   },
   nav: {
     display: "flex",
-    position: "absolute",
+    position: "sticky",
     height: 200,
-    flexDirection: "column",
+    flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
     paddingTop: 1,
-    width: 100,
+    width: "100%",
     // height: 125,
     backgroundColor: "#a5a5a5",
     borderBottomColor: blue,
@@ -263,12 +263,11 @@ const STYLES = StyleSheet.create({
     backgroundColor: blue,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "1%",
-    margin: "1%",
-    minWidth: 100,
+    margin: 3,
     borderRadius: 10,
     textDecorationLine: "none",
-    height: 50,
+    height: 100,
+    minWidth: Dimensions.get("window").width - 50,
     padding: 2,
   },
   text: {
