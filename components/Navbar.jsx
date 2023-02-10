@@ -20,13 +20,13 @@ const Navbar = () => {
       <TouchableOpacity onPress={() => { console.log('Pressed the logo') }} style={{ padding: 10, height: Dimensions.get("window").height / 5 }}>
         <Image style={{ width: 248, height: 80, marginLeft: "0%", marginTop: "0%" }} source={require("../assets/logo.png")} />
       </TouchableOpacity>
-      <View style={nav ? {
+      <View style={!nav ? { display: "none" } : {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         margin: "1%",
         alignItems: "center",
-      } : { display: "none" }}>
+      }}>
         <TouchableOpacity onPress={() => { setNav(!nav); console.log('Pressed the Pricing') }} style={STYLES.link} title="Pricing">
           <Text style={{ color: "#dedede", fontWeight: "bold", fontSize: 24 }}>
             Pricing
