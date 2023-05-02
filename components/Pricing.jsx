@@ -1,9 +1,9 @@
 // import React, { useState, useEffect } from "react"
 // import { useDispatch } from "react-redux"
 // import { fetchUnits } from "../features/unitSlice";
-import units from "../assets/unitData.js";
+import units from '../assets/unitData.js';
 import { ScrollView, View, Text, StyleSheet } from 'react-native';
-import STYLES from "../assets/Styles"
+import STYLES from '../assets/Styles';
 
 const Pricing = () => {
   // const dispatch = useDispatch();
@@ -13,14 +13,13 @@ const Pricing = () => {
   let climate = [];
   let nonClimate = [];
 
-  units.map(unit => {
+  units.map((unit) => {
     if (unit.climate) {
-      climate.push(unit)
+      climate.push(unit);
+    } else {
+      nonClimate.push(unit);
     }
-    else {
-      nonClimate.push(unit)
-    }
-  })
+  });
 
   // useEffect(() => {
   //   dispatch(fetchUnits()).then((res) => {
@@ -45,35 +44,49 @@ const Pricing = () => {
 
   return (
     <ScrollView>
-      <View style={STYLES.header} className="header" >
-        <Text style={STYLES.headerText}>
-          Pricing
-        </Text>
+      <View style={STYLES.header} className='header'>
+        <Text style={STYLES.headerText}>Pricing</Text>
       </View>
-      <View id="pricing" style={STYLES.pricing}>
-        <View id="climate">
+      <View id='pricing' style={STYLES.pricing}>
+        <View id='climate'>
           <Text style={STYLES.climateSpecifications}>Climate Controlled</Text>
-          {climate.length > 0 ? climate.map(unit => {
-            return (
-              <View key={unit.id} style={STYLES.climate} className="pricing-card climate" >
-                <Text style={{ ...STYLES.facilityh3, textShadowColor: "#aa1010" }}>{unit.length} x {unit.width} Climate Controlled</Text>
-                <Text style={{ ...STYLES.facilityh1, textShadowColor: "#aa1010" }}>${unit.price}</Text>
-              </View>
-            )
-          }) : <Text>Loading...</Text>}
+          {climate.length > 0 ? (
+            climate.map((unit) => {
+              return (
+                <View key={unit.id} style={STYLES.climate} className='pricing-card climate'>
+                  <Text style={{ ...STYLES.facilityh3, textShadowColor: '#aa1010' }}>
+                    {unit.length} x {unit.width} Climate Controlled
+                  </Text>
+                  <Text style={{ ...STYLES.facilityh1, textShadowColor: '#aa1010' }}>
+                    ${unit.price}
+                  </Text>
+                </View>
+              );
+            })
+          ) : (
+            <Text>Loading...</Text>
+          )}
         </View>
-        <View id="non-climate">
+        <View id='non-climate'>
           <Text style={STYLES.climateSpecifications}>Non-Climate Controlled</Text>
-          {nonClimate.length > 0 ? nonClimate.map(unit =>
-            <View key={unit.id} style={STYLES.nonclimate} className="pricing-card nonclimate" >
-              <Text style={{ ...STYLES.facilityh3, textShadowColor: "#1010aa" }}>{unit.length} x {unit.width} Non-Climate Controlled</Text>
-              <Text style={{ ...STYLES.facilityh1, textShadowColor: "#1010aa" }}>${unit.price}</Text>
-            </View>
-          ) : <Text>Loading...</Text>}
+          {nonClimate.length > 0 ? (
+            nonClimate.map((unit) => (
+              <View key={unit.id} style={STYLES.nonclimate} className='pricing-card nonclimate'>
+                <Text style={{ ...STYLES.facilityh3, textShadowColor: '#1010aa' }}>
+                  {unit.length} x {unit.width} Non-Climate Controlled
+                </Text>
+                <Text style={{ ...STYLES.facilityh1, textShadowColor: '#1010aa' }}>
+                  ${unit.price}
+                </Text>
+              </View>
+            ))
+          ) : (
+            <Text>Loading...</Text>
+          )}
         </View>
-      </View >
+      </View>
     </ScrollView>
-  )
-}
+  );
+};
 
-export default Pricing
+export default Pricing;

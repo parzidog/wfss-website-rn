@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import { useDispatch } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 // import {
@@ -22,7 +22,7 @@ const Admin = () => {
   };
   const handleChange = (prop) => (event) => {
     let value = event.target.value;
-    if (prop === "username") {
+    if (prop === 'username') {
       value = value.toLowerCase();
     }
     setLogin({
@@ -32,60 +32,55 @@ const Admin = () => {
   };
 
   return (
-    <View id="admin">
-      <View className="login">
+    <View id='admin'>
+      <View className='login'>
         <Text>Admin Login</Text>
         <hr />
-        <form onSubmit={handleSubmit} autoComplete="on">
-          <View className="box">
-            <label htmlFor="username" className="fl fontLabel">
-              {" "}
-              Username:{" "}
+        <form onSubmit={handleSubmit} autoComplete='on'>
+          <View className='box'>
+            <label htmlFor='username' className='fl fontLabel'>
+              {' '}
+              Username:{' '}
             </label>
-            <View className="fr">
+            <View className='fr'>
               <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                className="textBox"
-                autoFocus="on"
+                type='text'
+                name='username'
+                placeholder='Username'
+                className='textBox'
+                autoFocus='on'
                 required
-                onChange={handleChange("username")}
+                onChange={handleChange('username')}
               />
             </View>
-            <View className="clr"></View>
+            <View className='clr'></View>
           </View>
 
-          <View className="box">
-            <label htmlFor="password" className="fl fontLabel">
-              {" "}
-              Password:{" "}
+          <View className='box'>
+            <label htmlFor='password' className='fl fontLabel'>
+              {' '}
+              Password:{' '}
             </label>
-            <View className="fr">
+            <View className='fr'>
               <input
-                type="password"
+                type='password'
                 required
-                name="password"
-                placeholder="Password"
-                className="textBox"
-                onChange={handleChange("password")}
+                name='password'
+                placeholder='Password'
+                className='textBox'
+                onChange={handleChange('password')}
               />
             </View>
-            <View className="clr"></View>
+            <View className='clr'></View>
           </View>
 
-          <View className="box">
-            <input
-              type="submit"
-              name="login"
-              className="submit"
-              value="Login"
-            />
+          <View className='box'>
+            <input type='submit' name='login' className='submit' value='Login' />
           </View>
         </form>
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default Admin
+export default Admin;
